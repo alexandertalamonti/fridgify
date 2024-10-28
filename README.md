@@ -47,6 +47,8 @@ npm build && npm start
 
 6. Open your browser and navigate to `http://localhost:3000` to see the application running.
 
+7. (Optional) You can choose to import example data in fridge_inventory.json to see the features quickly. Otherwise, feel free to play with this app yourself!
+
 ## API Integration
 
 Fridgify integrates with the Pixabay API to fetch images for your fridge items. When you add a new item, Fridgify sends a request to the Pixabay API with the item name as a search query. If the API returns any results, the first image URL is stored with the item and displayed in the application.
