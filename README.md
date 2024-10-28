@@ -62,9 +62,7 @@ Portions of the Fridgify codebase were generated with the assistance of an AI la
 - Provide guidance on structuring the Next.js application
 - Assist with integrating the Pixabay API
 - Generate code snippets for specific features, such as adding and removing items, categorizing items, and handling data export/import
-- Offer suggestions on improving the user interface and experience
-
-The AI-generated code was carefully reviewed, tested, and modified as necessary to ensure it meets the project's requirements and follows best practices.
+- Make style changes to improve the look and feel of the application
 
 ## Credits
 
