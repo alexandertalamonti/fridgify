@@ -17,7 +17,7 @@ Fridgify helps you keep track of what's in your fridge, reducing food waste and 
 
 1. Clone the repository:
 ```
-git clone https://github.com/yourusername/fridgify.git
+git clone https://github.com/alexandertalamonti/fridgify
 ```
 2. Navigate to the project directory:
 ```
