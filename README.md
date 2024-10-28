@@ -47,7 +47,7 @@ npm build && npm start
 
 6. Open your browser and navigate to `http://localhost:3000` to see the application running.
 
-7. (Optional) You can choose to import example data in fridge_inventory.json to see the features quickly. Otherwise, feel free to play with this app yourself!
+7. (Optional) You can choose to import example data in `fridge_inventory.json` to see the features quickly. Otherwise, feel free to play with this app yourself!
 
 ## API Integration
 
