@@ -7,18 +7,21 @@ import { Label } from "@/components/ui/label";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { getImageForFood } from '@/lib/pixabay';
 
+// background colors for categories that we will iterate thru
 const categoryColors = [
     'bg-blue-100',
     'bg-gray-100',
 ];
 
+// custom component that is the meat of our app
 export default function InventoryManager() {
+  // set up state
   const [categories, setCategories] = useState([]);
   const [items, setItems] = useState({});
   const [newCategory, setNewCategory] = useState('');
   const [newItem, setNewItem] = useState({ category: '', name: '', quantity: 1, expirationDate: '' });
 
-  // Load data from localStorage when component mounts
+  // load data from localStorage when component mounts
   useEffect(() => {
     const savedCategories = localStorage.getItem('categories');
     const savedItems = localStorage.getItem('items');
@@ -26,12 +29,13 @@ export default function InventoryManager() {
     if (savedItems) setItems(JSON.parse(savedItems));
   }, []);
 
-  // Save data to localStorage whenever it changes
+  // save data to localStorage whenever it changes
   useEffect(() => {
     localStorage.setItem('categories', JSON.stringify(categories));
     localStorage.setItem('items', JSON.stringify(items));
   }, [categories, items]);
 
+  // add a new category to state
   const addCategory = () => {
     if (newCategory && !categories.includes(newCategory)) {
       setCategories([...categories, newCategory]);
@@ -40,6 +44,7 @@ export default function InventoryManager() {
     }
   };
 
+  // remove a category from state
   const removeCategory = (category) => {
     const updatedCategories = categories.filter(cat => cat !== category);
     const updatedItems = { ...items };
@@ -48,6 +53,7 @@ export default function InventoryManager() {
     setItems(updatedItems);
   };
 
+  // add item to state - must be async because the api calls in here
   const addItem = async () => {
     if (newItem.category && newItem.name && newItem.expirationDate) {
       const imageUrl = await getImageForFood(newItem.name);
@@ -61,14 +67,17 @@ export default function InventoryManager() {
     }
   };
 
+  // remove item from state
   const removeItem = (category, id) => {
     const updatedItems = { ...items };
     updatedItems[category] = updatedItems[category].filter(item => item.id !== id);
     setItems(updatedItems);
   };
 
+  // check if expiration date is before today
   const isExpired = (date) => new Date(date) < new Date();
 
+  // export data to JSON so we can load it in later
   const exportData = () => {
     const data = {
       categories: categories,
@@ -85,11 +94,14 @@ export default function InventoryManager() {
     document.body.removeChild(link);
   };
   
+  // import data from json so we can move data from different 
+  // virtual locatoins if needed
   const importData = (event) => {
     const file = event.target.files[0];
     const reader = new FileReader();
     reader.onload = (e) => {
       try {
+        // update state from json
         const data = JSON.parse(e.target.result);
         setCategories(data.categories);
         setItems(data.items);
@@ -179,8 +191,7 @@ export default function InventoryManager() {
             <Button onClick={addItem} className="w-full">Add Item</Button>
         </div>
         </div>
-    
-        {categories.map((category, index) => (
+        {categories.map((category, index) => ( // map over categories and display each item in fridge
             <div key={category} className={`mb-6 p-4 rounded ${categoryColors[index % categoryColors.length]}`}>
                 <div className="flex justify-between items-center mb-4">
                 <h2 className="text-xl font-semibold">{category}</h2>

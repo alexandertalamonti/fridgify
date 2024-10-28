@@ -8,6 +8,7 @@ export const metadata = {
   description: 'Keep track of your fridge contents.',
 }
 
+// general layout of the application
 export default function RootLayout({ children }) {
   return (
     <html lang="en">
