@@ -1,0 +1,52 @@
+{
+  "categories": [
+    "Freezer",
+    "Fridge"
+  ],
+  "items": {
+    "Freezer": [
+      {
+        "category": "Freezer",
+        "name": "Strawberry",
+        "quantity": 1,
+        "expirationDate": "2024-10-31",
+        "id": "1730154592578",
+        "imageUrl": "https://pixabay.com/get/g49891a2fd15cbcc5f6436b04a7ed5c9e02daeceb78047a3867a43912dcaf21187e97fafc72ed8cebdd5318d475fc4883e0699d67e263afe3fdb82bff19eedfb9_640.jpg"
+      },
+      {
+        "category": "Freezer",
+        "name": "Banana",
+        "quantity": 1,
+        "expirationDate": "2024-10-30",
+        "id": "1730154603505",
+        "imageUrl": "https://pixabay.com/get/gf1e8aad0bb0ddcfb3ea555961066caa3b4a521419e0e03e4edbfc359db8a754ce4b6cfa387d98938e40f6333fa61af4f29af9ddf2f6c3da1a9756f470e82a5e6_640.jpg"
+      }
+    ],
+    "Fridge": [
+      {
+        "category": "Fridge",
+        "name": "Apple",
+        "quantity": 1,
+        "expirationDate": "2024-10-28",
+        "id": "1730154643042",
+        "imageUrl": "https://pixabay.com/get/gbe0f6c296f93a60a46c1401aa83666de02c4111373495299c0b355c053113cc81d5fa3f148efcb07488077ae773a325a6cf581314ba3cfab536b02d23a39fc75_640.jpg"
+      },
+      {
+        "category": "Fridge",
+        "name": "Cucumber",
+        "quantity": 3,
+        "expirationDate": "2024-11-30",
+        "id": "1730155330039",
+        "imageUrl": "https://pixabay.com/get/g9b3f211ee5cd93029aeb72578bb84aebeae34b3cb73b8f550946ac8de4d55f063b872e08c8e018e4733c39fbb12e9e32b0a8d8eeb6aef41e36a6fe603521d50c_640.jpg"
+      },
+      {
+        "category": "Fridge",
+        "name": "Pizza Slice",
+        "quantity": 2,
+        "expirationDate": "2024-10-30",
+        "id": "1730155366186",
+        "imageUrl": "https://pixabay.com/get/gf0a38631023b5169d4a46634cf3680171d21e51eb99776562548c59695cd3d9f16876a81314d1f6d25dfa769cbb9217797fc9e69dd8d1e7ab4663beb93b6437a_640.jpg"
+      }
+    ]
+  }
+}
