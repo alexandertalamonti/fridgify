@@ -116,80 +116,80 @@ export default function InventoryManager() {
   return (
     <div className="container mx-auto p-4">
         <div className="mb-4 flex space-x-2">
-        <Button onClick={exportData}>Export Data</Button>
-        <label className="cursor-pointer bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 text-sm rounded">
-            Import Data
-            <input
-            type="file"
-            accept=".json"
-            className="hidden"
-            onChange={importData}
-            />
-        </label>
+            <Button onClick={exportData}>Export Data</Button>
+            <label className="cursor-pointer bg-blue-500 hover:bg-blue-600 text-white px-4 py-2 text-sm rounded">
+                Import Data
+                <input
+                type="file"
+                accept=".json"
+                className="hidden"
+                onChange={importData}
+                />
+            </label>
         </div>
     
         <div className="mb-6">
-        <Label htmlFor="newCategory" className="block mb-2">New Category</Label>
-        <div className="flex gap-2">
-            <Input
-            id="newCategory"
-            value={newCategory}
-            onChange={(e) => setNewCategory(e.target.value)}
-            placeholder="Category name"
-            className="flex-grow"
-            />
-            <Button onClick={addCategory}>Add Category</Button>
-        </div>
+            <Label htmlFor="newCategory" className="block mb-2">New Category</Label>
+            <div className="flex gap-2">
+                <Input
+                id="newCategory"
+                value={newCategory}
+                onChange={(e) => setNewCategory(e.target.value)}
+                placeholder="Category name"
+                className="flex-grow"
+                />
+                <Button onClick={addCategory}>Add Category</Button>
+            </div>
         </div>
     
         <div className="grid grid-cols-1 md:grid-cols-5 gap-4 mb-6">
-        <div>
-            <Label htmlFor="category" className="block mb-2">Category</Label>
-            <Select
-            value={newItem.category}
-            onValueChange={(value) => setNewItem({ ...newItem, category: value })}
-            >
-            <SelectTrigger>
-                <SelectValue placeholder="Select category" />
-            </SelectTrigger>
-            <SelectContent>
-                {categories.map((category) => (
-                <SelectItem key={category} value={category}>{category}</SelectItem>
-                ))}
-            </SelectContent>
-            </Select>
-        </div>
-        <div>
-            <Label htmlFor="name" className="block mb-2">Name</Label>
-            <Input
-            id="name"
-            value={newItem.name}
-            onChange={(e) => setNewItem({ ...newItem, name: e.target.value })}
-            placeholder="Item name"
-            />
-        </div>
-        <div>
-            <Label htmlFor="quantity" className="block mb-2">Quantity</Label>
-            <Input
-            id="quantity"
-            type="number"
-            value={newItem.quantity}
-            onChange={(e) => setNewItem({ ...newItem, quantity: parseInt(e.target.value) })}
-            min="1"
-            />
-        </div>
-        <div>
-            <Label htmlFor="expiration" className="block mb-2">Expiration Date</Label>
-            <Input
-            id="expiration"
-            type="date"
-            value={newItem.expirationDate}
-            onChange={(e) => setNewItem({ ...newItem, expirationDate: e.target.value })}
-            />
-        </div>
-        <div className="flex items-end">
-            <Button onClick={addItem} className="w-full">Add Item</Button>
-        </div>
+            <div>
+                <Label htmlFor="category" className="block mb-2">Category</Label>
+                <Select
+                value={newItem.category}
+                onValueChange={(value) => setNewItem({ ...newItem, category: value })}
+                >
+                <SelectTrigger>
+                    <SelectValue placeholder="Select category" />
+                </SelectTrigger>
+                <SelectContent>
+                    {categories.map((category) => (
+                    <SelectItem key={category} value={category}>{category}</SelectItem>
+                    ))}
+                </SelectContent>
+                </Select>
+            </div>
+            <div>
+                <Label htmlFor="name" className="block mb-2">Name</Label>
+                <Input
+                id="name"
+                value={newItem.name}
+                onChange={(e) => setNewItem({ ...newItem, name: e.target.value })}
+                placeholder="Item name"
+                />
+            </div>
+            <div>
+                <Label htmlFor="quantity" className="block mb-2">Quantity</Label>
+                <Input
+                id="quantity"
+                type="number"
+                value={newItem.quantity}
+                onChange={(e) => setNewItem({ ...newItem, quantity: parseInt(e.target.value) })}
+                min="1"
+                />
+            </div>
+            <div>
+                <Label htmlFor="expiration" className="block mb-2">Expiration Date</Label>
+                <Input
+                id="expiration"
+                type="date"
+                value={newItem.expirationDate}
+                onChange={(e) => setNewItem({ ...newItem, expirationDate: e.target.value })}
+                />
+            </div>
+            <div className="flex items-end">
+                <Button onClick={addItem} className="w-full">Add Item</Button>
+            </div>
         </div>
         {categories.map((category, index) => ( // map over categories and display each item in fridge
             <div key={category} className={`mb-6 p-4 rounded ${categoryColors[index % categoryColors.length]}`}>
@@ -227,5 +227,5 @@ export default function InventoryManager() {
             </div>
         ))}
     </div>
-    );    
+  );    
 }
